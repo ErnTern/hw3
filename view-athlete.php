@@ -13,8 +13,8 @@
 while ($athlete = $athlete->fetch_assoc())
   ?>
 <tr>
-  <td><?php echo $athlete['Athlete_ID']; ?></td>
-  <td><?php echo $athlete['Athlete_Name']; ?></td>
-  <td><?php echo $athlete['Athlete_Age']; ?></td>
+  <td><?php echo $athlete['athlete_id']; ?></td>
+  <td><?php echo $athlete['athlete_name']; ?></td>
+  <td><?php echo $athlete['athlete_age']; ?></td>
 </tr>
 </tbody>
