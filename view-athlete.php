@@ -10,7 +10,7 @@
     </thread>
   <tbody>
   <?php
-while ($athlete = $athlete->fetch_assoc())
+while ($athlete = $athlete->fetch_assoc())  {
 ?>
   <tr>
     <td><?php echo $athlete['athlete_id']; ?></td>
