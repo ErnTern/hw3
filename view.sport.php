@@ -13,9 +13,9 @@
 while ($sport = $sports->fetch_assoc())  {
 ?>
   <tr>
-    <td><?php echo $athlete['sport_id']; ?></td>
-    <td><?php echo $athlete['sport_name']; ?></td>
-    <td><?php echo $athlete['average_playtime']; ?></td>
+    <td><?php echo $sport['sport_id']; ?></td>
+    <td><?php echo $sport['sport_name']; ?></td>
+    <td><?php echo $sport['average_playtime']; ?></td>
   </tr>
 <?php
 }
@@ -23,3 +23,4 @@ while ($sport = $sports->fetch_assoc())  {
     </tbody>
   </table>
 </div>
+
