@@ -4,7 +4,8 @@ require_once("model.sport.php");
 
 $pgaetitle = "Sports";
 include "view-header.php";
-$Sports = selectSport();
+$sports = selectSport();
 include "view-sport.php";
 include "view-footer.php";
 ?>
+
