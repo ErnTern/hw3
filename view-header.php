@@ -23,13 +23,13 @@
           <a class="nav-link" href="athlete.php">Athlete</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="sport.php">Sport</a>
+          <a class="nav-link" href="sport.php">Athlete's Sport</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="athlete-sport.php">Athlete's Sport</a>
+          <a class="nav-link" href="athlete-sport.php">Athlete's League</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="athlete-league.php">Athlete's League</a>
+          <a class="nav-link" href="athlete-league.php">League Schedule</a>
         </li>
       </ul>
     </div>
