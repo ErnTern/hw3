@@ -29,7 +29,7 @@
           <a class="nav-link" href="athlete-with-sport.php">Athletes with Sports</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="athlete-league.php">League Schedule</a>
+          <a class="nav-link" href="league-schedule.php">League Schedule</a>
         </li>
       </ul>
     </div>
