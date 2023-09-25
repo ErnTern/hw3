@@ -1,6 +1,6 @@
 <?php
 require_once("util-db.php");
-require_once("model.athlete-with-sport.php");
+require_once("model.ahtlete-with-sport.php");
 
 $pgaetitle = "Athletes with Sports";
 include "view-header.php";
