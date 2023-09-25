@@ -6,6 +6,7 @@
         <th>ID</th>
         <th>Sport</th>
         <th>Average Playtime</th>
+        <th></th>
       </tr>
     </thread>
   <tbody>
@@ -16,6 +17,12 @@ while ($sport = $sports->fetch_assoc())  {
     <td><?php echo $sport['sport_id']; ?></td>
     <td><?php echo $sport['sport_name']; ?></td>
     <td><?php echo $sport['average_playtime']; ?></td>
+    <td>
+      <form method = "post" action = "league-by-sport.php">
+        <input type = "hidden" name="lid" value ="<?php echo $sport['sport_id']; ?>">
+        <button type="submit" class="btn btn-primary">Leagues</button>
+      </form>
+    </td>
   </tr>
 <?php
 }
