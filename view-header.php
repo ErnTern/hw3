@@ -26,10 +26,6 @@
           <a class="nav-link" href="sport.php">Athlete's Sport</a>
         </li>
          <li class="nav-item">
-           <a class ="nav-link" href="get.php">Get</a>
-         </li>
-        <li class="nav-item">
-          <a class ="nav-link" href="get-result.php">Get result</a>
           <a class="nav-link" href="athlete-with-sport.php">Athletes with Sports</a>
         </li>
          <li class="nav-item">
