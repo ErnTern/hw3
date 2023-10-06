@@ -16,7 +16,7 @@ function selectSport() {
 function insertSport($sName, $sPlaytime) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO `Sport` (`sport_name`, `average_playtime`) VALUES (?, ?");
+        $stmt = $conn->prepare("INSERT INTO `Sport` (`sport_name`, `average_playtime`) VALUES (?, ?)");
         $stmt->bind_param("ss", $sName, $sPlaytime);
         $success = $stmt->execute();
         $conn->close();
