@@ -29,6 +29,9 @@ while ($sport = $sports->fetch_assoc())  {
     <td><?php echo $sport['sport_name']; ?></td>
     <td><?php echo $sport['average_playtime']; ?></td>
     <td>
+    <?php
+      include "view-sports-editform.php";
+    ?>
     </td>
     <td>
       <form method = "post" action = "">
