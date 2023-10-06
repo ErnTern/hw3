@@ -25,6 +25,7 @@
     <label for="sPlaytime" class="form-label">Average Playtime</label>
     <input type="text" class="form-control" id="sName" name="sPlaytime">
   </div>
+            <input type ='hidden' name='actionType' value="Add">
   <button type="submit" class="btn btn-primary">Save</button>
         </form>
         
