@@ -32,7 +32,7 @@ while ($sport = $sports->fetch_assoc())  {
     </td>
     <td>
       <form method = "post" action = "">
-        <input type = "hidden" name="lid" value ="<?php echo $sport['sport_id']; ?>">
+        <input type = "hidden" name="sid" value ="<?php echo $sport['sport_id']; ?>">
         <input type = "hidden" name = "actionType" value = "Delete">
         <button type="submit" class="btn btn-primary">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
