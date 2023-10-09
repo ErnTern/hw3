@@ -44,7 +44,7 @@ function updateSport($sName, $sPlaytime, $sid) {
 function deleteSport($sid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("delete from sport where sport_id = ?");
+        $stmt = $conn->prepare("delete from Sport where sport_id = ?");
         $stmt->bind_param("i", $sid);
         $success = $stmt->execute();
         $conn->close();
