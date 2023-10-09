@@ -46,8 +46,6 @@ include "view-sports.editform.php";
       </form>
     </td>
     <td>
-
-      <?php
       <form method = "post" action = "league-by-sport.php">
         <input type = "hidden" name="lid" value ="<?php echo $sport['sport_id']; ?>">
         <button type="submit" class="btn btn-primary">Leagues</button>
