@@ -18,7 +18,10 @@
       <div class="modal-body">
         <form method="post" action="">
   <div class="mb-3">
-    <label for="schID" class="form-label">Schedule ID</label>
+    <label for="schName" class="form-label">New Season/Tournament Name</label>
+    <input type="text" class="form-control" id="schName" name="schName">
+  </div>
+    <label for="schID" class="form-label">Sport ID</label>
     <input type="text" class="form-control" id="schID" name="schID">
   </div>
     <div class="mb-3">
