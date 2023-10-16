@@ -25,8 +25,6 @@ while ($schedule = $schedules->fetch_assoc())  {
     <td><?php echo $schedule['start_date']; ?></td>
     <td><?php echo $schedule['end_date']; ?></td>
   </tr>
-<?php
-}
 
 <?php
 include "view-schedule.editform.php";
