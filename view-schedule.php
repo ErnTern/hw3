@@ -3,7 +3,7 @@
     <h1>Schedules</h1>
     <div class="col-auto">
     <?php
-      include "view-schedule-newform.php";
+      include "view-schedule.newform.php";
     ?>
   </div>
     <thread>
