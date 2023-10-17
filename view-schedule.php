@@ -2,9 +2,11 @@
   <table class = "table">
     <h1>Schedules</h1>
     <div class="col-auto">
+      <td>
     <?php
       include "view-schedule.newform.php";
     ?>
+      </td>
   </div>
     <thread>
       <tr>
@@ -26,9 +28,11 @@ while ($schedule = $schedules->fetch_assoc())  {
     <td><?php echo $schedule['end_date']; ?></td>
   </tr>
 
+  <td>
 <?php
 include "view-schedule.editform.php";
 ?>
+  </td>
     </td>
     <td>
       <form method = "post" action = "">
