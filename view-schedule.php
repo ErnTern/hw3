@@ -32,7 +32,7 @@ while ($schedule = $schedules->fetch_assoc())  {
 <?php
 include "view-schedule.editform.php";
 ?>
-      <td>
+    
       <form method = "post" action = "">
         <input type = "hidden" name="sid" value ="<?php echo $schedule['schedule_id']; ?>">
         <input type = "hidden" name = "actionType" value = "Delete">
@@ -43,7 +43,7 @@ include "view-schedule.editform.php";
             </svg>
         </button>
       </form>
-    </td>
+    
   </td>
     </td>
 
