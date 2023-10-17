@@ -27,7 +27,7 @@ function insertSchedule($schName, $schID, $schSDate, $schEDate) {
     }
 }
 
-function updateSchedule($schName, $schID, $schSDate, $schEDate, schIDD) {
+function updateSchedule($schName, $schID, $schSDate, $schEDate, $schIDD) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("update `Schedule` set `season_tourney` = ? `sport_id` = ? 'start_date' = ? 'end_date' = ? where schedule_id = ?)");
@@ -41,11 +41,11 @@ function updateSchedule($schName, $schID, $schSDate, $schEDate, schIDD) {
     }
 }
 
-function updateSport($sName, $sPlaytime, $sid) {
+function deleteSchedule($schIDD) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("update `Sport` set `sport_name` = ?, `average_playtime` = ? where sport_id = ?");
-        $stmt->bind_param("ssi", $sName, $sPlaytime, $sid);
+        $stmt = $conn->prepare("delete from Schedule where = ?)");
+        $stmt->bind_param("i", $schIDD);
         $success = $stmt->execute();
         $conn->close();
         return $success;
@@ -55,17 +55,3 @@ function updateSport($sName, $sPlaytime, $sid) {
     }
 }
 
-function deleteSport($sid) {
-    try {
-        $conn = get_db_connection();
-        $stmt = $conn->prepare("delete from Sport where sport_id = ?");
-        $stmt->bind_param("i", $sid);
-        $success = $stmt->execute();
-        $conn->close();
-        return $success;
-    } catch (Exception $e) {
-        $conn->close();
-        throw $e;
-    }
-}
-?>
