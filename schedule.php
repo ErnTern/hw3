@@ -15,14 +15,14 @@ if (isset($_POST['actionType'])) {
       }
       break;
     case "Edit":
-      if (updateSchedule($_POST['schName'], $_POST['schID'], $_POST['sid'])) {
+      if (updateSchedule($_POST['schName'], $_POST['schID'], $_POST['schIDD'])) {
         echo '<div class="alert alert-success" role="alert">Season/Tourney edited.</div>';
       } else {
         echo '<div class="alert alert-danger" role="alert">Error.</div>';
       }
       break;
      case "Delete":
-      if (deleteSchedule($_POST['sid'])) {
+      if (deleteSchedule($_POST['schIDD'])) {
         echo '<div class="alert alert-success" role="alert">Season/Tourney deleted.</div>';
       } else {
         echo '<div class="alert alert-danger" role="alert">Error.</div>';
