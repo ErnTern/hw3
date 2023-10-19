@@ -17,25 +17,24 @@
       </div>
       <div class="modal-body">
         <form method="post" action="">
-  <div class="mb-3">
-    <label for="schName" class="form-label">New Season/Tournament Name</label>
-    <input type="text" class="form-control" id="schName" name="schName">
-  </div>
-    <label for="schID" class="form-label">Sport ID</label>
-    <input type="text" class="form-control" id="schID" name="schID">
-  </div>
-    <div class="mb-3">
-    <label for="schSDate" class="form-label">Start Date</label>
-    <input type="text" class="form-control" id="schSDate" name="schSDate">
-  </div>
-    <div class="mb-3">
-    <label for="schEDate" class="form-label">End Date</label>
-    <input type="text" class="form-control" id="schEDate" name="schEDate">
-  </div>
+              <div class="mb-3">
+                <label for="schName" class="form-label">New Season/Tournament Name</label>
+                <input type="text" class="form-control" id="schName" name="schName">
+              </div>
+                <label for="schID" class="form-label">Sport ID</label>
+                <input type="text" class="form-control" id="schID" name="schID">
+              </div>
+                <div class="mb-3">
+                <label for="schSDate" class="form-label">Start Date</label>
+                <input type="text" class="form-control" id="schSDate" name="schSDate">
+              </div>
+                <div class="mb-3">
+                <label for="schEDate" class="form-label">End Date</label>
+                <input type="text" class="form-control" id="schEDate" name="schEDate">
+              </div>
             <input type ='hidden' name='actionType' value="Add">
   <button type="submit" class="btn btn-primary">Save</button>
-        </form>
-        
+        </form>     
       </div>
     </div>
   </div>
