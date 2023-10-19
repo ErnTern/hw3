@@ -8,7 +8,14 @@ include "view-header.php";
 if (isset($_POST['actionType'])) {
   switch ($_POST['actionType']) {
     case "Add":
-      if (insertSchedule($_POST['schName'], $_POST['schID'])) {
+      insertSchedule($_POST['schName'], $_POST['schID']));
+  }
+}
+     
+    
+    
+    /*
+    if (insertSchedule($_POST['schName'], $_POST['schID'])) {
         echo '<div class="alert alert-success" role="alert">New Season/Tourney Added.</div>';
       } else {
         echo '<div class="alert alert-danger" role="alert">Error.</div>';
@@ -30,7 +37,7 @@ if (isset($_POST['actionType'])) {
       break;
   }
 }
-
+*/
 $schedule = selectSchedule();
 include "view-schedule.php";
 include "view-footer.php";
