@@ -8,7 +8,8 @@ include "view-header.php";
 if (isset($_POST['actionType'])) {
   switch ($_POST['actionType']) {
     case "Add":
-      insertSchedule($_POST['schName'], $_POST['schID'], $_POST['schSDate'], $_POST['schEDate']));
+      insertSchedule($_POST['schName'], $_POST['schID'], $_POST['schSDate'], $_POST['schEDate']);
+    break;
   }
 }
      
