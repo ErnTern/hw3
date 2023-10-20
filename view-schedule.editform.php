@@ -19,7 +19,7 @@
         <form method="post" action="">
   <div class="mb-3">
     <label for="schName<?php echo $schedule['schedule_id']; ?>" class="form-label">Season/Tournament Name</label>
-    <input type="text" class="form-control" id="schName<?php echo $schedule['schedule_id']; ?>" name="schName" value="<?php echo $schdule['season_tourney']; ?>">
+    <input type="text" class="form-control" id="schName<?php echo $schedule['schedule_id']; ?>" name="schName" value="<?php echo $schedule['season_tourney']; ?>">
   </div>
     <div class="mb-3">
     <label for="schID<?php echo $schedule['schedule_id']; ?>" class="form-label">Sport ID</label>
