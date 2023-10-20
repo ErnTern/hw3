@@ -16,7 +16,7 @@ function selectSchedule() {
 function insertSchedule($schName, $schID, $schSDate, $schEDate) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO 'Schedule' ('season_tourney', 'sport_id', 'start_date', 'end_date') VALUES (?, ?, ?, ?)");
+        $stmt = $conn->prepare(INSERT INTO `Schedule` (`schedule_id`, `sport_id`, `start_date`, `end_date`, `season_tourney`) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("siss", $schName, $schID, $schSDate, $schEDate);
         $success = $stmt->execute();
         $conn->close();
@@ -30,7 +30,7 @@ function insertSchedule($schName, $schID, $schSDate, $schEDate) {
 function updateSchedule($schName, $schID, $schSDate, $schEDate, $schIDD) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("update 'Schedule' set 'season_tourney' = ? 'sport_id' = ? 'start_date' = ? 'end_date' = ? where schedule_id = ?)");
+        $stmt = $conn->prepare("update `Schedule` set `season_tourney` = ? `sport_id` = ? `start_date` = ? `end_date` = ? where schedule_id = ?)");
         $stmt->bind_param("sissi", $schName, $schID, $schSDate, $schEDate, $schIDD);
         $success = $stmt->execute();
         $conn->close();
@@ -44,7 +44,7 @@ function updateSchedule($schName, $schID, $schSDate, $schEDate, $schIDD) {
 function deleteSchedule($schIDD) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("delete from 'Schedule' where = ?)");
+        $stmt = $conn->prepare("delete from `Schedule` where = ?)");
         $stmt->bind_param("i", $schIDD);
         $success = $stmt->execute();
         $conn->close();
