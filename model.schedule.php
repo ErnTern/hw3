@@ -55,3 +55,4 @@ function deleteSchedule($schIDD) {
     }
 }
 
+?>
