@@ -16,7 +16,7 @@ function selectSchedule() {
 function insertSchedule($schName, $schID, $schSDate, $schEDate) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO `Schedule` (`schedule_id`, `sport_id`, `start_date`, `end_date`, `season_tourney`) VALUES (?, ?, ?, ?,?)");
+        $stmt = $conn->prepare("INSERT INTO `Schedule` (`schedule_id`, `sport_id`, `start_date`, `end_date`, `season_tourney`) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("siss", $schName, $schID, $schSDate, $schEDate);
         $success = $stmt->execute();
         $conn->close();
