@@ -1,14 +1,16 @@
-<div class = "table-response">
-  <table class = "table">
-    <h1>Schedules</h1>
+<div class="row">
+  <div class="col">
+<h1>Schedules</h1>
+  </div>
     <div class="col-auto">
-      <td>
     <?php
       include "view-schedule.newform.php";
     ?>
-      </td>
   </div>
-    <thread>
+</div>
+<div class = "table-response">
+  <table class = "table">
+    <thead>
       <tr>
         <th>Season/Tournament Name</th>
         <th>Sport ID</th>
@@ -16,7 +18,7 @@
         <th>End Date</th>
         <th></th>
       </tr>
-    </thread>
+    </thead>
   <tbody>
   <?php
 while ($schedule = $schedules->fetch_assoc())  {
