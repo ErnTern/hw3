@@ -63,7 +63,7 @@ function selectSchIDForInput() {
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
-        return $return;
+        return $result;
     } catch (Exception $e) {
         $conn->close();
         throw $e;
