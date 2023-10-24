@@ -15,7 +15,7 @@ if (isset($_POST['actionType'])) {
       }
       break;
     case "Edit":
-      if (updateSchedule($_POST['schName'], $_POST['schID'], $_POST['schSDate'], $_POST['schEDate'] /*, $_POST['schIDD']*/)) {
+      if (updateSchedule($_POST['schID'], $_POST['schSDate'], $_POST['schEDate'], $_POST['schName'], $_POST['schIDD'])) {
         echo '<div class="alert alert-success" role="alert">Season/Tourney edited.</div>';
       } else {
         echo '<div class="alert alert-danger" role="alert">Error.</div>';
