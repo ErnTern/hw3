@@ -25,7 +25,7 @@
     <label for="schID<?php echo $schedule['schedule_id']; ?>" class="form-label">Sport ID</label>
                     <?php
                     $schIDList = selectSchIDForInput();
-                    $selectedID = $Sport['sport_id'];
+                    $selectedID = $sport['sport_id'];
                     include "view-sportid-input-list.php";
                     ?>
   </div>
