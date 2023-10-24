@@ -59,10 +59,11 @@ function selectSchIDForInput() {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("SELECT sport_id FROM `Sport` Order by sport_id");
-        $stmt->bind_param("i", $schIDD);
-        $success = $stmt->execute();
+       // $stmt->bind_param("i", $schIDD);
+        $stmt->execute();
+        $result = $stmt->get_result();
         $conn->close();
-        return $success;
+        return $return;
     } catch (Exception $e) {
         $conn->close();
         throw $e;
