@@ -44,7 +44,7 @@ function updateSchedule($schName, $schID, $schSDate, $schEDate, $schIDD) {
 function deleteSchedule($schIDD) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("delete from `Schedule` where = ?)");
+        $stmt = $conn->prepare("delete from `Schedule` where schedule_id = ?)");
         $stmt->bind_param("i", $schIDD);
         $success = $stmt->execute();
         $conn->close();
