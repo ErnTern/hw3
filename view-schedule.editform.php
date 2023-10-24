@@ -23,7 +23,11 @@
   </div>
     <div class="mb-3">
     <label for="schID<?php echo $schedule['schedule_id']; ?>" class="form-label">Sport ID</label>
-    <input type="text" class="form-control" id="schID<?php echo $schedule['schedule_id']; ?>" name="schID" value="<?php echo $schedule['sport_id']; ?>">
+                    <?php
+                    $schIDList = selectSchIDForInput();
+                    include "view-sportid-input-list.php";
+                    ?>
+    <!--<input type="text" class="form-control" id="schID<?php// echo $schedule['schedule_id']; ?>" name="schID" value="<?php echo $schedule['sport_id']; ?>"> -->
   </div>
           <div class="mb-3">
     <label for="schSDate<?php echo $schedule['schedule_id']; ?>" class="form-label">Start Date</label>
