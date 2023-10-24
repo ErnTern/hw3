@@ -23,15 +23,15 @@
   </div>
     <div class="mb-3">
     <label for="schID<?php echo $schedule['schedule_id']; ?>" class="form-label">Sport ID</label>
-    <input type="text" class="form-control" id="schID<?php echo $schedule['sport_id']; ?>" name="schID" value="<?php echo $schedule['sport_id']; ?>">
+    <input type="text" class="form-control" id="schID<?php echo $schedule['schedule_id']; ?>" name="schID" value="<?php echo $schedule['sport_id']; ?>">
   </div>
           <div class="mb-3">
     <label for="schSDate<?php echo $schedule['schedule_id']; ?>" class="form-label">Start Date</label>
-    <input type="text" class="form-control" id="schSDate<?php echo $schedule['start_date']; ?>" name="schSDate" value="<?php echo $schedule['start_date']; ?>">
+    <input type="text" class="form-control" id="schSDate<?php echo $schedule['schedule_id']; ?>" name="schSDate" value="<?php echo $schedule['start_date']; ?>">
   </div>
           <div class="mb-3">
     <label for="schEDate<?php echo $schedule['schedule_id']; ?>" class="form-label">End Date</label>
-    <input type="text" class="form-control" id="schEDate<?php echo $schedule['end_date']; ?>" name="schEDate" value="<?php echo $schedule['end_date']; ?>">
+    <input type="text" class="form-control" id="schEDate<?php echo $schedule['schedule_id']; ?>" name="schEDate" value="<?php echo $schedule['end_date']; ?>">
   </div>
             <input type="hidden" name="schIDD" value="<?php echo $schedule['schedule_id']; ?>">
             <input type ='hidden' name='actionType' value="Edit">
