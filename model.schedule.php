@@ -55,4 +55,18 @@ function deleteSchedule($schIDD) {
     }
 }
 
+function selectSchIDForInput() {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("SELECT sport_id FROM `Sport` Order by sport_id");
+        $stmt->bind_param("i", $schIDD);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
 ?>
