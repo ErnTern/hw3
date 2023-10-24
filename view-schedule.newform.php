@@ -21,9 +21,15 @@
                 <label for="schName" class="form-label">New Season/Tournament Name</label>
                 <input type="text" class="form-control" id="schName" name="schName">
               </div>
+                <div class="mb-3">
                 <label for="schID" class="form-label">Sport ID</label>
-                <input type="text" class="form-control" id="schID" name="schID">
-              </div>
+                    
+                    <?php
+                    $schIDList = selectSchIDForInput();
+                    include "view-sportid-input-list.php";
+                    ?>
+                
+              </div> 
                 <div class="mb-3">
                 <label for="schSDate" class="form-label">Start Date</label>
                 <input type="text" class="form-control" id="schSDate" name="schSDate">
