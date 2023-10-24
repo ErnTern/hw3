@@ -30,7 +30,7 @@ function insertSchedule($schName, $schID, $schSDate, $schEDate) {
 function updateSchedule($schID, $schSDate, $schEDate, $schName, $schIDD) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("UPDATE `Schedule` SET `sport_id` = ?, start_date = ?, end_date = ?, season_tourney = ? WHERE schedule_id = ?");
+        $stmt = $conn->prepare("UPDATE `Schedule` SET `sport_id` = ?, start_date = ?, end_date = ?, season_tourney = ? WHERE schedule_id = 7");
         $stmt->bind_param("isssi", $schID, $schSDate, $schEDate, $schName, $schIDD);
         $success = $stmt->execute();
         $conn->close();
