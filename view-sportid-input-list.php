@@ -1,4 +1,4 @@
-<select class="form-select" id="schIDD" name="schIDD">
+<select class="form-select" id="schID" name="schID">
   <?php
 while ($sportItem = $schIDList->fetch_assoc()) {
   ?>
