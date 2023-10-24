@@ -26,6 +26,7 @@
                     
                     <?php
                     $schIDList = selectSchIDForInput();
+                    $selectedID = 0;
                     include "view-sportid-input-list.php";
                     ?>
                 
