@@ -55,7 +55,7 @@ function deleteSchedule($schIDD) {
     }
 }
 
-function selectSchIDForInput($schIDD) {
+function selectSchIDForInput() {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("SELECT sport_id FROM `Sport` Order by sport_id");
