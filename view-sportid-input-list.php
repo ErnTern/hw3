@@ -3,7 +3,7 @@
 while ($sportItem = $schIDList->fetch_assoc()) {
   $selText ="";
   if ($selectedID == $sportItem['sport_id']) {
-    $selText = "selected"
+    $selText = "selected";
   }
   ?>
   <option value="<?php echo $sportItem['sport_id']; ?>"<?=$selText?>><?php echo $sportItem['sport_id']; ?></option>
