@@ -33,7 +33,7 @@
     <label for="schEDate<?php echo $schedule['schedule_id']; ?>" class="form-label">End Date</label>
     <input type="text" class="form-control" id="schEDate<?php echo $schedule['end_date']; ?>" name="schEDate" value="<?php echo $schedule['end_date']; ?>">
   </div>
-            <input type="hidden" name="schid" value="<?php echo $schedule['schedule_id']; ?>">
+            <input type="hidden" name="schIDD" value="<?php echo $schedule['schedule_id']; ?>">
             <input type ='hidden' name='actionType' value="Edit">
   <button type="submit" class="btn btn-primary">Save</button>
         </form>
