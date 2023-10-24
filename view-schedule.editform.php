@@ -22,7 +22,7 @@
     <input type="text" class="form-control" id="schName<?php echo $schedule['schedule_id']; ?>" name="schName" value="<?php echo $schedule['season_tourney']; ?>">
   </div>
     <div class="mb-3">
-    <label for="schID<?php echo $schedule['schedule_id']; ?>" class="form-label">Sport ID</label>
+    <label for="schID<?php echo $sport['sport_id']; ?>" class="form-label">Sport ID</label>
                     <?php
                     $schIDList = selectSchIDForInput();
                     $selectedID = $sport['sport_id'];
