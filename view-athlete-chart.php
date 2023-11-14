@@ -23,7 +23,7 @@
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
 <?php
-$athlete = selectAtheletes();
+$athlete = selectAthlete();
   while ($athlete = $athletes->fetch_assoc())  { 
   echo "'" . $athlete['athlete_name'] . "', ";
 }
