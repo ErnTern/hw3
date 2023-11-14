@@ -105,24 +105,26 @@ $athlete = selectAthlete();
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-  const ctx2 = document.getElementById('myChart2');
-   new Chart(ctx2, {
-  type: 'bubble',
-  data: {
-  options: {}
-    const data = {
-  datasets: [{
-    label: 'First Dataset',
-    data: [{
-      x: 20,
-      y: 30,
-      r: 15
-    }, {
-      x: 40,
-      y: 10,
-      r: 10
-    }],
-  }]
-};
+  document.addEventListener('DOMContentLoaded', function () {
+    const ctx2 = document.getElementById('myChart2').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bubble',
+      data: {
+        datasets: [{
+          label: 'First Dataset',
+          data: [{
+            x: 20,
+            y: 30,
+            r: 15
+          }, {
+            x: 40,
+            y: 10,
+            r: 10
+          }],
+        }]
+      },
+      options: {} // You need to close the data object before the options object
+    });
+  });
 </script>
 
