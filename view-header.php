@@ -31,6 +31,9 @@
          <li class="nav-item">
           <a class="nav-link" href="league-schedule.php">League Schedule</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="athlete-chart.php">Charts</a>
+        </li>
       </ul>
     </div>
   </div>
