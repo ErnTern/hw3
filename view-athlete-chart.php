@@ -5,31 +5,31 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-  const ctx = document.getElementById('myChart');
+  const ctx = document.getElementById('myChart').getContext('2d');
 
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-    datasets: [{
+      datasets: [{
         data: [
-<?php
-  while ($athlete = $athletes->fetch_assoc())  { 
-  echo $athlete['num_league'] . ", ";
-}
-?>
-              ]
-    }],
-
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-<?php
-$athlete = selectAthlete();
-  while ($athlete = $athletes->fetch_assoc())  { 
-  echo "'" . $athlete['athlete_name'] . "', ";
-}
-?>
-    ]
-},
+          <?php
+            $athletes = selectAthlete();
+            while ($athlete = $athletes->fetch_assoc()) { 
+              echo $athlete['num_league'] . ", ";
+            }
+          ?>
+        ],
+        // Add labels for each data point in the dataset
+        labels: [
+          <?php
+            $athletes = selectAthlete();
+            while ($athlete = $athletes->fetch_assoc()) { 
+              echo "'" . $athlete['athlete_name'] . "', ";
+            }
+          ?>
+        ]
+      }]
+    },
   });
 </script>
 
