@@ -33,6 +33,12 @@ $athlete = selectAthlete();
   });
 </script>
 
+
+
+<div>
+  <canvas id="myChart1"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   const ctx1 = document.getElementById('myChart1');
 
