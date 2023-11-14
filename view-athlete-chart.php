@@ -64,6 +64,38 @@ $athlete = selectAthlete();
   });
 </script>
 
+
+<!-- Chart 2.5 -->
+<div>
+  <canvas id="myChart3"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx3 = document.getElementById('myChart3');
+
+  new Chart(ctx3, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        axis: 'y',
+        label: 'Number of Things',
+        data: [22, 10, 8, 3, 0, 15],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
 <!-- Chart 3 -->
 <div>
   <canvas id="myChart2"></canvas>
@@ -74,7 +106,7 @@ $athlete = selectAthlete();
   const ctx2 = document.getElementById('myChart2');
    new Chart(ctx2, {
   type: 'bubble',
-  data: data,
+  data: {
   options: {}
     const data = {
   datasets: [{
