@@ -68,13 +68,14 @@ $athlete = selectAthlete();
 <div>
   <canvas id="myChart2"></canvas>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
   const ctx2 = document.getElementById('myChart2');
    new Chart(ctx2, {
     type: 'bubble',
+     data: {
+    datasets: [{
     data: [{
       x: 20,
       y: 30,
