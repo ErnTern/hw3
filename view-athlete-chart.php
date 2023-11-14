@@ -40,9 +40,9 @@ $athlete = selectAthlete();
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  const ctx1 = document.getElementById('myChart1');
+  const ctx = document.getElementById('myChart1');
 
-  new Chart(ctx1, {
+  new Chart(ctx, {
     type: 'doughnut',
     data: {
     datasets: [{
