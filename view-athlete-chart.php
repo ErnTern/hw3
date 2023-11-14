@@ -34,9 +34,9 @@ $athlete = selectAthlete();
 </script>
 
 <script>
-  const ctx = document.getElementById('myChart1');
+  const ctx1 = document.getElementById('myChart1');
 
-  new Chart(ctx, {
+  new Chart(ctx1, {
     type: 'doughnut',
     data: {
     datasets: [{
