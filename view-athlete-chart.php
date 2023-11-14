@@ -49,7 +49,7 @@ $athlete = selectAthlete();
     data: {
       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       datasets: [{
-        label: '# of Votes',
+        label: 'Number of Votes',
         data: [12, 19, 3, 5, 2, 3],
         borderWidth: 1
       }]
@@ -63,3 +63,35 @@ $athlete = selectAthlete();
     }
   });
 </script>
+
+<!-- Chart 3 -->
+<div>
+  <canvas id="myChart2"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx2 = document.getElementById('myChart2');
+
+  new Chart(ctx2, {
+    const config = {
+  type: 'bubble',
+  const data = {
+  datasets: [{
+    label: 'First Dataset',
+    data: [{
+      x: 20,
+      y: 30,
+      r: 15
+    }, {
+      x: 40,
+      y: 10,
+      r: 10
+    }],
+    backgroundColor: 'rgb(255, 99, 132)'
+  }]
+};
+
+</script>
+
