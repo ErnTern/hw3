@@ -1,7 +1,35 @@
 <h1>Athlete Chart</h1>
-  <?php
-while ($athlete = $athletes->fetch_assoc())  {
-  
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+    datasets: [{
+        data: [
+<?php
+  while ($athlete = $athletes->fetch_assoc())  { 
+  echo $athlete['num_league'] . ", ";
 }
 ?>
+              ]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+<?PHP
+$athlete = selectAthelete();
+  while ($athlete = $athletes->fetch_assoc())  { 
+  echo "'" . $athlete['athlete_name'] . "', ";
+}
+?>
+    ]
+},
+  });
+</script>
 
