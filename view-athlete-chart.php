@@ -34,37 +34,32 @@ $athlete = selectAthlete();
 </script>
 
 
-
+<!-- Chart 2 -->
 <div>
   <canvas id="myChart1"></canvas>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
-  const ctx = document.getElementById('myChart1');
+  const ctx1 = document.getElementById('myChart1');
 
-  new Chart(ctx, {
-    type: 'doughnut',
+  new Chart(ctx1, {
+    type: 'bar',
     data: {
-    datasets: [{
-        data: [
-<?php
-  while ($athlete = $athletes->fetch_assoc())  { 
-  echo $athlete['num_league'] . ", ";
-}
-?>
-              ]
-    }],
-
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-<?php
-$athlete = selectAthlete();
-  while ($athlete = $athletes->fetch_assoc())  { 
-  echo "'" . $athlete['athlete_name'] . "', ";
-}
-?>
-    ]
-},
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
   });
 </script>
-
