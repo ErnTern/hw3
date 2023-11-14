@@ -73,13 +73,8 @@ $athlete = selectAthlete();
 
 <script>
   const ctx2 = document.getElementById('myChart2');
-
-  new Chart(ctx2, {
-    const config = {
-  type: 'bubble',
-  const data = {
-  datasets: [{
-    label: 'First Dataset',
+   new Chart(ctx2, {
+    type: 'bubble',
     data: [{
       x: 20,
       y: 30,
@@ -88,10 +83,8 @@ $athlete = selectAthlete();
       x: 40,
       y: 10,
       r: 10
-    }],
-    backgroundColor: 'rgb(255, 99, 132)'
+    }], backgroundColor: 'rgb(255, 99, 132)'
   }]
 };
-
 </script>
 
