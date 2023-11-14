@@ -5,31 +5,31 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-  const ctx = document.getElementById('myChart').getContext('2d');
+  const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      datasets: [{
+    datasets: [{
         data: [
-          <?php
-            $athletes = selectAthlete();
-            while ($athlete = $athletes->fetch_assoc()) { 
-              echo $athlete['num_league'] . ", ";
-            }
-          ?>
-        ],
-        // Add labels for each data point in the dataset
-        labels: [
-          <?php
-            $athletes = selectAthlete();
-            while ($athlete = $athletes->fetch_assoc()) { 
-              echo "'" . $athlete['athlete_name'] . "', ";
-            }
-          ?>
-        ]
-      }]
-    },
+<?php
+  while ($athlete = $athletes->fetch_assoc())  { 
+  echo $athlete['num_league'] . ", ";
+}
+?>
+              ]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+<?php
+$athlete = selectAthlete();
+  while ($athlete = $athletes->fetch_assoc())  { 
+  echo "'" . $athlete['athlete_name'] . "', ";
+}
+?>
+    ]
+},
   });
 </script>
 
@@ -79,7 +79,7 @@
     const data = {
       labels: labels,
       datasets: [{
-        label: 'My First Dataset',
+        label: 'Line Chart',
         data: [65, 59, 80, 81, 56, 55, 40],
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
@@ -108,7 +108,7 @@
       type: 'bubble',
       data: {
         datasets: [{
-          label: 'First Dataset',
+          label: 'Bubble Chart',
           data: [{
             x: 20,
             y: 30,
