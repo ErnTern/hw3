@@ -78,9 +78,6 @@ $athlete = selectAthlete();
   new Chart(ctx3, {
     type: 'bar',
     data: {
-    options: {
-    indexAxis: 'y',
-    }
       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       datasets: [{
         axis: 'y',
@@ -90,6 +87,8 @@ $athlete = selectAthlete();
       }]
     },
     options: {
+    indexAxis: 'y',
+    }
       scales: {
         y: {
           beginAtZero: true
