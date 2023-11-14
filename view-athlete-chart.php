@@ -69,32 +69,29 @@ $athlete = selectAthlete();
 <div>
   <canvas id="myChart3"></canvas>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-  const ctx3 = document.getElementById('myChart3');
+  document.addEventListener('DOMContentLoaded', function () {
+    const ctx3 = document.getElementById('myChart3').getContext('2d');
 
-  new Chart(ctx3, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    const data = {
+      labels: labels,
       datasets: [{
-        axis: 'y',
-        label: 'Number of Things',
-        data: [22, 10, 8, 3, 0, 15],
-        borderWidth: 1
+        label: 'My First Dataset',
+        data: [65, 59, 80, 81, 56, 55, 40],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
       }]
-    },
-    options: {
-    indexAxis: 'y',
-    }
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
+    };
+
+    new Chart(ctx3, {
+      type: 'line',
+      data: data,
+      options: {} // You need to close the data object before the options object
+    });
   });
 </script>
 
