@@ -35,119 +35,64 @@ $athlete = selectAthlete();
 
 
 <!-- Chart 2 -->
-<div>
-  <canvas id="myChart1"></canvas>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-  const ctx1 = document.getElementById('myChart1');
-
-  new Chart(ctx1, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: 'Number of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
-
-
-<!-- Chart 2.5 -->
-<div>
-  <canvas id="myChart3"></canvas>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const ctx3 = document.getElementById('myChart3').getContext('2d');
-
-    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-    const data = {
-      labels: labels,
-      datasets: [{
-        label: 'Line Chart',
-        data: [65, 59, 80, 81, 56, 55, 40],
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
-      }]
-    };
-
-    new Chart(ctx3, {
-      type: 'line',
-      data: data,
-      options: {} // You need to close the data object before the options object
-    });
-  });
-</script>
-
-<!-- Chart 3 -->
-<div>
-  <canvas id="myChart2"></canvas>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const ctx2 = document.getElementById('myChart2').getContext('2d');
-    new Chart(ctx2, {
-      type: 'bubble',
-      data: {
-        datasets: [{
-          label: 'Bubble Chart',
-          data: [{
-            x: 20,
-            y: 30,
-            r: 15
-          }, {
-            x: 40,
-            y: 10,
-            r: 10
-          }],
-        }]
-      },
-      options: {} // You need to close the data object before the options object
-    });
-  });
-</script>
-
-<!-- Chart 2 -->
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My first Chartist Tests</title>
-    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
-    <script src="bower_components/chartist/dist/chartist.min.js"></script>
-  </head>
-  <body>
-    <!-- Site content goes here! -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D3.js Bar Chart Example</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <style>
+    /* Add some basic styling to the bars for better visibility */
+    rect {
+      fill: steelblue;
+    }
+  </style>
+</head>
+<body>
 
-    <div class="ct-chart ct-perfect-fourth"></div>
+  <script>
+    // Sample data for the bar chart
+    const data = [30, 70, 150, 120, 200];
 
-    <script>
-      var data = {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-        series: [
-          [5, 2, 4, 2, 0]
-        ]
-      };
+    // Set up the SVG container dimensions
+    const svgWidth = 400;
+    const svgHeight = 200;
 
-      new Chartist.Line('.ct-chart', data);
-    </script>
-  </body>
+    // Set up the scales for x and y axes
+    const xScale = d3.scaleBand()
+      .domain(d3.range(data.length))
+      .range([0, svgWidth])
+      .padding(0.1);
+
+    const yScale = d3.scaleLinear()
+      .domain([0, d3.max(data)])
+      .range([svgHeight, 0]);
+
+    // Create the SVG container
+    const svg = d3.select('body').append('svg')
+      .attr('width', svgWidth)
+      .attr('height', svgHeight);
+
+    // Create bars in the bar chart
+    svg.selectAll('rect')
+      .data(data)
+      .enter().append('rect')
+      .attr('x', (d, i) => xScale(i))
+      .attr('y', d => yScale(d))
+      .attr('width', xScale.bandwidth())
+      .attr('height', d => svgHeight - yScale(d));
+
+    // Add x-axis
+    svg.append('g')
+      .attr('transform', `translate(0,${svgHeight})`)
+      .call(d3.axisBottom(xScale));
+
+    // Add y-axis
+    svg.append('g')
+      .call(d3.axisLeft(yScale));
+  </script>
+
+</body>
 </html>
 
