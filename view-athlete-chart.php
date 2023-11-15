@@ -149,33 +149,43 @@ $athlete = selectAthlete();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <title>Plotly.js Bar Chart Example</title>
+    <!-- Load the Google Charts library -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Google Charts Bar Chart Example</title>
 </head>
 <body>
 
+<!-- The container for the chart -->
 <div id="bar-chart"></div>
 
 <script>
-    // Sample data for the bar chart
-    var data = [{
-        x: ['Category A', 'Category B', 'Category C'],
-        y: [10, 20, 15],
-        type: 'bar',
-        marker: {
-            color: 'rgb(63, 81, 181)' // Customizing bar color
-        }
-    }];
+    // Load the Google Charts library
+    google.charts.load('current', {'packages': ['corechart']});
 
-    // Layout configuration for the chart
-    var layout = {
-        title: 'Simple Bar Chart with Plotly.js',
-        xaxis: { title: 'Categories' },
-        yaxis: { title: 'Values' }
-    };
+    // Set a callback to run when the Google Charts library is loaded
+    google.charts.setOnLoadCallback(drawChart);
 
-    // Create the bar chart
-    Plotly.newPlot('bar-chart', data, layout);
+    // Callback function to draw the bar chart
+    function drawChart() {
+        // Sample data for the bar chart
+        var data = google.visualization.arrayToDataTable([
+            ['Category', 'Value'],
+            ['Category A', 10],
+            ['Category B', 20],
+            ['Category C', 15]
+        ]);
+
+        // Configuration options for the chart
+        var options = {
+            title: 'Simple Bar Chart with Google Charts',
+            hAxis: { title: 'Categories' },
+            vAxis: { title: 'Values' }
+        };
+
+        // Create the bar chart
+        var chart = new google.visualization.ColumnChart(document.getElementById('bar-chart'));
+        chart.draw(data, options);
+    }
 </script>
 
 </body>
