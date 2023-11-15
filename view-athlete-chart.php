@@ -144,43 +144,40 @@ $athlete = selectAthlete();
 
 
 <!-- Number 4 -->
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zdog Example</title>
-  <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-  <script src="zdog-demo.js"></script>
+  <title>Chartist Example</title>
+  <!-- Include Chartist library -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chartist@0.11.5/dist/chartist.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.5/dist/chartist.min.js"></script>
 </head>
 <body>
 
+  <!-- Container for the chart -->
+  <div class="ct-chart"></div>
+
   <script>
-    let illo = new Zdog.Illustration({
-      // set canvas with selector
-      element: '.zdog-canvas',
-    });
+    // Sample data for the line chart
+    var data = {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+      series: [
+        [5, 10, 15, 7, 2]
+      ]
+    };
 
-    // add circle
-    new Zdog.Ellipse({
-      addTo: illo,
-      diameter: 80,
-      stroke: 20,
-      color: '#636',
-    });
+    // Configuration options for the line chart
+    var options = {
+      fullWidth: true,
+      chartPadding: {
+        right: 40
+      }
+    };
 
-    // update & render
-    illo.updateRenderGraph();
-    function animate() {
-      // rotate illo each frame
-      illo.rotate.y += 0.03;
-      illo.updateRenderGraph();
-      // animate next frame
-      requestAnimationFrame(animate);
-    }
-
-    // start animation
-    animate();
+    // Create the line chart
+    new Chartist.Line('.ct-chart', data, options);
   </script>
 
 </body>
