@@ -144,7 +144,9 @@ $athlete = selectAthlete();
 
 
 <!-- Number 4 -->
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!-- Include local copy of Zdog library -->
+<script src="path/to/zdog.js"></script>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
