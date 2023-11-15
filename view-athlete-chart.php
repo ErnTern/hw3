@@ -97,50 +97,31 @@ $athlete = selectAthlete();
 </html>
 
 <!-- Number 3 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zdog 3D Model Example</title>
-  <script src="https://cdn.jsdelivr.net/npm/zdog@1.1.0/dist/zdog.js"></script>
-  <style>
-    /* Add some basic styling for the canvas */
-    canvas {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-</head>
-<body>
+<!-- Use an ID for the canvas element -->
+<canvas id="myCanvas"></canvas>
 
-  <script>
-    // Create an instance of Zdog Illustration
-    let illo = new Zdog.Illustration({
-      element: 'canvas', // Use the canvas element with the ID 'canvas'
-      zoom: 2, // Zoom in to see the model better
-    });
+<script>
+  // Create an instance of Zdog Illustration
+  let illo = new Zdog.Illustration({
+    element: 'myCanvas', // Use the canvas element ID 'myCanvas'
+    zoom: 2, // Zoom in to see the model better
+  });
 
-    // Create a shape (cuboid in this case) using Zdog
-    let box = new Zdog.Box({
-      addTo: illo, // Add the box to the illustration
-      width: 80,
-      height: 80,
-      depth: 80,
-      stroke: 20, // Border thickness
-      color: '#E62', // Box color
-    });
+  // Create a shape (cuboid in this case) using Zdog
+  let box = new Zdog.Box({
+    addTo: illo, // Add the box to the illustration
+    width: 80,
+    height: 80,
+    depth: 80,
+    stroke: 20, // Border thickness
+    color: '#E62', // Box color
+  });
 
-    // Update and render the illustration
-    function animate() {
-      illo.updateRenderGraph();
-      requestAnimationFrame(animate);
-    }
+  // Update and render the illustration
+  function animate() {
+    illo.updateRenderGraph();
+    requestAnimationFrame(animate);
+  }
 
-    animate(); // Start the animation loop
-  </script>
-
-</body>
-</html>
-
-
+  animate(); // Start the animation loop
+</script>
