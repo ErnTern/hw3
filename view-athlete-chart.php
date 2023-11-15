@@ -149,25 +149,26 @@ $athlete = selectAthlete();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lodash Example</title>
-  <!-- Include Lodash library -->
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21"></script>
+  <title>Chartist Example</title>
+  <!-- Include Chartist library -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chartist@0.11.5/dist/chartist.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.5/dist/chartist.min.js"></script>
 </head>
 <body>
 
+  <!-- Container for the chart -->
+  <div class="ct-chart"></div>
+
   <script>
-    // Sample array of numbers
-    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // Sample data for the line chart
+    const chartData = {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+      series: [[5, 10, 15, 7, 2]]
+    };
 
-    // Use Lodash to filter even numbers
-    const evenNumbers = _.filter(numbers, (num) => num % 2 === 0);
-
-    // Log the result
-    console.log("Original Numbers:", numbers);
-    console.log("Even Numbers:", evenNumbers);
+    // Create the line chart
+    new Chartist.Line('.ct-chart', chartData);
   </script>
 
 </body>
 </html>
-
-
