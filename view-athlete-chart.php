@@ -125,41 +125,31 @@ $athlete = selectAthlete();
   });
 </script>
 
-{
-  // Declare the chart dimensions and margins.
-  const width = 640;
-  const height = 400;
-  const marginTop = 20;
-  const marginRight = 20;
-  const marginBottom = 30;
-  const marginLeft = 40;
+<!-- Chart 2 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first Chartist Tests</title>
+    <link rel="stylesheet"
+          href="bower_components/chartist/dist/chartist.min.css">
+  </head>
+  <body>
+    <!-- Site content goes here !-->
+    <script src="bower_components/chartist/dist/chartist.min.js"></script>
+  </body>
+</html>
+<div class="ct-chart ct-perfect-fourth"></div>
+var data = {
+  // A labels array that can contain any sort of values
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  // Our series array that contains series objects or in this case series data arrays
+  series: [
+    [5, 2, 4, 2, 0]
+  ]
+};
 
-  // Declare the x (horizontal position) scale.
-  const x = d3.scaleUtc()
-      .domain([new Date("2023-01-01"), new Date("2024-01-01")])
-      .range([marginLeft, width - marginRight]);
-
-  // Declare the y (vertical position) scale.
-  const y = d3.scaleLinear()
-      .domain([0, 100])
-      .range([height - marginBottom, marginTop]);
-
-  // Create the SVG container.
-  const svg = d3.create("svg")
-      .attr("width", width)
-      .attr("height", height);
-
-  // Add the x-axis.
-  svg.append("g")
-      .attr("transform", `translate(0,${height - marginBottom})`)
-      .call(d3.axisBottom(x));
-
-  // Add the y-axis.
-  svg.append("g")
-      .attr("transform", `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(y));
-
-  // Return the SVG element.
-  return svg.node();
-}
+// Create a new line chart object where as first parameter we pass in a selector
+// that is resolving to our chart container element. The Second parameter
+// is the actual data object.
+new Chartist.Line('.ct-chart', data);
 
