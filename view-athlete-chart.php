@@ -145,44 +145,44 @@ $athlete = selectAthlete();
 
 <!-- Number 4 -->
 <!DOCTYPE HTML>
-<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-<script src="zdog-demo.js"></script>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zdog Example</title>
-  <!-- Include Zdog library -->
-  <script src="https://cdn.jsdelivr.net/npm/zdog@1.1.0/dist/zdog.js"></script>
+  <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+  <script src="zdog-demo.js"></script>
 </head>
 <body>
 
-  <!-- Container for the Zdog illustration -->
-  <canvas id="zdogCanvas" width="400" height="400"></canvas>
-
   <script>
-    // Create an instance of Zdog Illustration
     let illo = new Zdog.Illustration({
-      element: 'zdogCanvas', // Use the canvas element with the ID 'zdogCanvas'
-      zoom: 2, // Zoom in to see the model better
+      // set canvas with selector
+      element: '.zdog-canvas',
     });
 
-    // Create a shape (sphere in this case) using Zdog
-    let sphere = new Zdog.Shape({
-      addTo: illo, // Add the shape to the illustration
-      translate: { z: 40 }, // Move the sphere forward in the z-axis to make it visible
-      stroke: 80, // Diameter of the sphere
-      color: '#E62', // Sphere color
+    // add circle
+    new Zdog.Ellipse({
+      addTo: illo,
+      diameter: 80,
+      stroke: 20,
+      color: '#636',
     });
 
-    // Update and render the illustration
+    // update & render
+    illo.updateRenderGraph();
     function animate() {
+      // rotate illo each frame
+      illo.rotate.y += 0.03;
       illo.updateRenderGraph();
+      // animate next frame
       requestAnimationFrame(animate);
     }
 
-    animate(); // Start the animation loop
+    // start animation
+    animate();
   </script>
 
 </body>
 </html>
+
