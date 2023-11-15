@@ -97,31 +97,46 @@ $athlete = selectAthlete();
 </html>
 
 <!-- Number 3 -->
-<!-- Use an ID for the canvas element -->
-<canvas id="myCanvas"></canvas>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highcharts Example</title>
+  <!-- Include Highcharts library -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
 
-<script>
-  // Create an instance of Zdog Illustration
-  let illo = new Zdog.Illustration({
-    element: 'myCanvas', // Use the canvas element ID 'myCanvas'
-    zoom: 2, // Zoom in to see the model better
-  });
+  <!-- Container for the chart -->
+  <div id="chartContainer" style="height: 400px; width: 100%;"></div>
 
-  // Create a shape (cuboid in this case) using Zdog
-  let box = new Zdog.Box({
-    addTo: illo, // Add the box to the illustration
-    width: 80,
-    height: 80,
-    depth: 80,
-    stroke: 20, // Border thickness
-    color: '#E62', // Box color
-  });
+  <script>
+    // Sample data for the column chart
+    const chartData = [5, 10, 15, 7, 2];
 
-  // Update and render the illustration
-  function animate() {
-    illo.updateRenderGraph();
-    requestAnimationFrame(animate);
-  }
+    // Create the column chart
+    Highcharts.chart('chartContainer', {
+      chart: {
+        type: 'column' // Set the chart type to column
+      },
+      title: {
+        text: 'Sample Column Chart'
+      },
+      xAxis: {
+        categories: ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5']
+      },
+      yAxis: {
+        title: {
+          text: 'Values'
+        }
+      },
+      series: [{
+        name: 'Data Series',
+        data: chartData
+      }]
+    });
+  </script>
 
-  animate(); // Start the animation loop
-</script>
+</body>
+</html>
