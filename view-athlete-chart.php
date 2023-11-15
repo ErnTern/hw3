@@ -147,43 +147,38 @@ $athlete = selectAthlete();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zdog Getting Started</title>
-  <!-- Include Zdog library -->
-  <script src="https://cdn.jsdelivr.net/npm/zdog@1.1.0/dist/zdog.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>Plotly.js Bar Chart Example</title>
 </head>
 <body>
 
-  <!-- Container for the Zdog illustration -->
-  <canvas id="zdogCanvas" width="400" height="400"></canvas>
+<div id="bar-chart"></div>
 
-  <script>
-    // Create an instance of Zdog Illustration
-    let illo = new Zdog.Illustration({
-      element: 'zdogCanvas', // Use the canvas element with the ID 'zdogCanvas'
-      zoom: 2, // Zoom in to see the model better
-    });
+<script>
+    // Sample data for the bar chart
+    var data = [{
+        x: ['Category A', 'Category B', 'Category C'],
+        y: [10, 20, 15],
+        type: 'bar',
+        marker: {
+            color: 'rgb(63, 81, 181)' // Customizing bar color
+        }
+    }];
 
-    // Create a shape (cuboid in this case) using Zdog
-    let box = new Zdog.Box({
-      addTo: illo, // Add the box to the illustration
-      width: 80,
-      height: 80,
-      depth: 80,
-      stroke: 20, // Border thickness
-      color: '#E62', // Box color
-    });
+    // Layout configuration for the chart
+    var layout = {
+        title: 'Simple Bar Chart with Plotly.js',
+        xaxis: { title: 'Categories' },
+        yaxis: { title: 'Values' }
+    };
 
-    // Update and render the illustration
-    function animate() {
-      illo.updateRenderGraph();
-      requestAnimationFrame(animate);
-    }
-
-    animate(); // Start the animation loop
-  </script>
+    // Create the bar chart
+    Plotly.newPlot('bar-chart', data, layout);
+</script>
 
 </body>
 </html>
+
 
