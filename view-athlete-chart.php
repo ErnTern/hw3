@@ -144,46 +144,30 @@ $athlete = selectAthlete();
 
 
 <!-- Number 4 -->
-<!DOCTYPE HTML>
-<!-- Include local copy of Zdog library -->
-<script src="path/to/zdog.js"></script>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zdog Example</title>
-  <!-- Include Zdog library -->
-  <script src="https://cdn.jsdelivr.net/npm/zdog@1.1.0/dist/zdog.js"></script>
+  <title>Lodash Example</title>
+  <!-- Include Lodash library -->
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21"></script>
 </head>
 <body>
 
-  <!-- Container for the Zdog illustration -->
-  <canvas id="zdogCanvas" width="400" height="400"></canvas>
-
   <script>
-    // Create an instance of Zdog Illustration
-    let illo = new Zdog.Illustration({
-      element: 'zdogCanvas', // Use the canvas element with the ID 'zdogCanvas'
-      zoom: 2, // Zoom in to see the model better
-    });
+    // Sample array of numbers
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-    // Create a shape (sphere in this case) using Zdog
-    let sphere = new Zdog.Shape({
-      addTo: illo, // Add the shape to the illustration
-      translate: { z: 40 }, // Move the sphere forward in the z-axis to make it visible
-      stroke: 80, // Diameter of the sphere
-      color: '#E62', // Sphere color
-    });
+    // Use Lodash to filter even numbers
+    const evenNumbers = _.filter(numbers, (num) => num % 2 === 0);
 
-    // Update and render the illustration
-    function animate() {
-      illo.updateRenderGraph();
-      requestAnimationFrame(animate);
-    }
-
-    animate(); // Start the animation loop
+    // Log the result
+    console.log("Original Numbers:", numbers);
+    console.log("Even Numbers:", evenNumbers);
   </script>
 
 </body>
 </html>
+
 
