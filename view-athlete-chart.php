@@ -149,35 +149,39 @@ $athlete = selectAthlete();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chartist Example</title>
-  <!-- Include Chartist library -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chartist@0.11.5/dist/chartist.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.5/dist/chartist.min.js"></script>
+  <title>Zdog Getting Started</title>
+  <!-- Include Zdog library -->
+  <script src="https://cdn.jsdelivr.net/npm/zdog@1.1.0/dist/zdog.js"></script>
 </head>
 <body>
 
-  <!-- Container for the chart -->
-  <div class="ct-chart"></div>
+  <!-- Container for the Zdog illustration -->
+  <canvas id="zdogCanvas" width="400" height="400"></canvas>
 
   <script>
-    // Sample data for the line chart
-    var data = {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-      series: [
-        [5, 10, 15, 7, 2]
-      ]
-    };
+    // Create an instance of Zdog Illustration
+    let illo = new Zdog.Illustration({
+      element: 'zdogCanvas', // Use the canvas element with the ID 'zdogCanvas'
+      zoom: 2, // Zoom in to see the model better
+    });
 
-    // Configuration options for the line chart
-    var options = {
-      fullWidth: true,
-      chartPadding: {
-        right: 40
-      }
-    };
+    // Create a shape (cuboid in this case) using Zdog
+    let box = new Zdog.Box({
+      addTo: illo, // Add the box to the illustration
+      width: 80,
+      height: 80,
+      depth: 80,
+      stroke: 20, // Border thickness
+      color: '#E62', // Box color
+    });
 
-    // Create the line chart
-    new Chartist.Line('.ct-chart', data, options);
+    // Update and render the illustration
+    function animate() {
+      illo.updateRenderGraph();
+      requestAnimationFrame(animate);
+    }
+
+    animate(); // Start the animation loop
   </script>
 
 </body>
